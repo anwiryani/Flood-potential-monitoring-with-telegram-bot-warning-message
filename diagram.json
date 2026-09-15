@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "author": "Nur Annisa Wiryani",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 115.2, "left": -91.16, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -27.3, "left": -119.3, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 92.4, "left": 51.8, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ultrasonic1:GND", "esp:GND.2", "black", [ "v0", "h37.2" ] ],
+    [ "ultrasonic1:VCC", "esp:3V3", "red", [ "v0", "h-38.4" ] ],
+    [ "ultrasonic1:ECHO", "esp:17", "orange", [ "v19.2", "h56.8", "v153.6" ] ],
+    [ "ultrasonic1:TRIG", "esp:18", "green", [ "v38.4", "h76.4", "v115.2" ] ],
+    [ "led1:C", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led1:A", "esp:5", "blue", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
